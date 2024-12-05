@@ -2,7 +2,7 @@ import express from 'express';
 import pino from 'pino-http';
 import cors from 'cors';
 
-import { getEnvVar } from './utils/getEnvVar.js';
+import { env } from './utils/env.js';
 
 export const setupServer = () => {
   const app = express();
@@ -32,7 +32,7 @@ export const setupServer = () => {
     });
   });
 
-  const port = Number(getEnvVar('PORT', 3000));
+  const port = Number(env('PORT', 3000));
 
   app.listen(port, () => {
     console.log(`Server is running on ${port} port `);
