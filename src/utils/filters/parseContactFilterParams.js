@@ -1,9 +1,9 @@
 import { typeList } from '../../constants/contacts.js';
 
-const parseType = (type) => {
-  if (typeof type !== 'string') return;
+const parseType = (contactType) => {
+  if (typeof contactType !== 'string') return;
 
-  if (typeList.includes(type)) return type;
+  if (typeList.includes(contactType)) return contactType;
 };
 
 const parseIsFavourite = (isFavourite) => {
@@ -16,12 +16,13 @@ const parseIsFavourite = (isFavourite) => {
   return;
 };
 
-export const parseContactFilterParams = ({ type, isFavourite }) => {
-  const parsedType = parseType(type);
+export const parseContactFilterParams = (query) => {
+  const { isFavourite, contactType } = query;
+  const parsedType = parseType(contactType);
   const parsedIsFavourite = parseIsFavourite(isFavourite);
 
   return {
-    type: parsedType,
+    contactType: parsedType,
     isFavourite: parsedIsFavourite,
   };
 };

@@ -16,7 +16,6 @@ const contactSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
     },
     isFavourite: {
       type: Boolean,
