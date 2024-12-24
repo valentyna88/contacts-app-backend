@@ -11,11 +11,12 @@ const contactSchema = new Schema(
       required: true,
     },
     phoneNumber: {
-      type: Number,
+      type: String,
       required: true,
     },
     email: {
       type: String,
+      default: null,
     },
     isFavourite: {
       type: Boolean,
@@ -40,13 +41,6 @@ contactSchema.pre('findOneAndUpdate', setUpdateSettings);
 
 contactSchema.post('findOneAndUpdate', handleSaveError);
 
-export const sortByList = [
-  '_id',
-  'name',
-  'phoneNumber',
-  'email',
-  'isFavourite',
-  'contactType',
-];
+export const sortByList = ['name', 'phoneNumber', 'email'];
 
 export const ContactsCollection = model('contacts', contactSchema);
