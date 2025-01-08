@@ -59,24 +59,19 @@ export const updateContact = async (
   payload,
   options = {},
 ) => {
-  const { upsert = false } = options;
   const result = await ContactsCollection.findOneAndUpdate(
     { _id: contactId, userId },
     payload,
     {
-      upsert,
+      new: true,
       includeResultMetadata: true,
+      ...options,
     },
   );
 
   if (!result || !result.value) return null;
 
-  const isNew = Boolean(result.lastErrorObject.upserted);
-
-  return {
-    isNew,
-    data: result.value,
-  };
+  return result.value;
 };
 
 export const deleteContact = (filter) =>

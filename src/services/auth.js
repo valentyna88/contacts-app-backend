@@ -93,7 +93,7 @@ export const getUser = (filter) => UserCollection.findOne(filter);
 
 export const getSession = (filter) => SessionCollection.findOne(filter);
 
-export const sendResetToken = async ({ email }) => {
+export const sendResetToken = async (email) => {
   const user = await UserCollection.findOne({ email });
 
   if (!user) {
