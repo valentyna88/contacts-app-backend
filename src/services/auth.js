@@ -93,7 +93,7 @@ export const getUser = (filter) => UserCollection.findOne(filter);
 
 export const getSession = (filter) => SessionCollection.findOne(filter);
 
-export const sendResetToken = async (email) => {
+export const sendResetToken = async ({ email }) => {
   const user = await UserCollection.findOne({ email });
 
   if (!user) {
@@ -110,20 +110,18 @@ export const sendResetToken = async (email) => {
     },
   );
 
-  const resetPasswordTemplatePath = path.join(
+  const resetPwdTemplatePath = path.join(
     TEMPLATES_DIR,
     'reset-password-email.html',
   );
 
-  const templateSource = (
-    await fs.readFile(resetPasswordTemplatePath)
-  ).toString();
+  const templateSource = (await fs.readFile(resetPwdTemplatePath)).toString();
 
   const template = handlebars.compile(templateSource);
 
   const html = template({
     name: user.name,
-    link: `${env('APP_DOMAIN')}/reset-password?token=${resetToken}`,
+    link: `${env('APP_DOMAIN')}/reset-pwd?token=${resetToken}`,
   });
 
   try {
@@ -141,7 +139,7 @@ export const sendResetToken = async (email) => {
   }
 };
 
-export const resetPassword = async ({ password, token }) => {
+export const resetPwd = async ({ password, token }) => {
   let entries;
 
   try {
@@ -159,10 +157,7 @@ export const resetPassword = async ({ password, token }) => {
     throw createHttpError(404, 'User not found!');
   }
 
-  const encryptedPassword = await bcrypt.hash(password, 10);
+  const encryptedPwd = await bcrypt.hash(password, 10);
 
-  await UserCollection.updateOne(
-    { _id: user._id },
-    { password: encryptedPassword },
-  );
+  await UserCollection.updateOne({ _id: user._id }, { password: encryptedPwd });
 };

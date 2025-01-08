@@ -75,8 +75,8 @@ export const sendResetEmailController = async (req, res) => {
   });
 };
 
-export const resetPasswordController = async (req, res) => {
-  await authServices.resetPassword(req.body);
+export const resetPwdController = async (req, res) => {
+  await authServices.resetPwd(req.body);
 
   res.json({
     status: 200,
