@@ -3,8 +3,7 @@ tags:
 summary: Logout user
 operationId: logoutUser
 description: 'Logout user from the session'
-security:
-  - bearerAuth: []
+security: []
 responses:
   '204':
     description: User logged out successfully. No content returned.

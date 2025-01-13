@@ -3,8 +3,7 @@ tags:
 summary: Refresh session
 operationId: refreshUserSession
 description: 'Refresh access token of the session'
-security:
-  - bearerAuth: []
+security: []
 responses:
   '200':
     description: Access token of the session refreshed
