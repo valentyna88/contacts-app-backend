@@ -1,4 +1,4 @@
-description: Contact not found
+description: User not found
 content:
   application/json:
     schema:
@@ -13,4 +13,4 @@ content:
           example: 404
         message:
           type: string
-          example: Contact with id 65ca67e7ae7f10c88b5k83p7 not found
+          example: User not found!
