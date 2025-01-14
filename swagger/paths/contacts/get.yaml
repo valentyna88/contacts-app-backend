@@ -71,18 +71,18 @@ responses:
                 data:
                   type: array
                   items:
-                    $ref: '../../components/schemas/contact.yaml'
+                    $ref: ../../components/schemas/contact.yaml
                 page:
-                  type: number
+                  type: integer
                   example: 2
                 perPage:
-                  type: number
+                  type: integer
                   example: 4
                 totalItems:
-                  type: number
+                  type: integer
                   example: 4
                 totalPages:
-                  type: number
+                  type: integer
                   example: 4
                 hasNextPage:
                   type: boolean
