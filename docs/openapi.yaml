@@ -43,7 +43,7 @@ paths:
       $ref: ../swagger/paths/auth/send-reset-email.yaml
   /auth/reset-password:
     post:
-      $ref: ../swagger/paths/auth/reset-password.yaml
+      $ref: ../swagger/paths/auth/reset-pwd.yaml
 components:
   securitySchemes:
     bearerAuth:
