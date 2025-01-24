@@ -64,38 +64,38 @@ The application requires the following environment variables to run properly:
 
 ### Server Configuration
 
-- PORT: The port number for the server to listen on (default: 5000).
+- `PORT`: The port number for the server to listen on (default: 5000).
 
 ### Database Configuration
 
-- MONGODB_USER: Username for accessing the MongoDB database.
-- MONGODB_PASSWORD: Password for the database user.
-- MONGODB_URL: MongoDB connection URL (excluding database name).
-- MONGODB_DB: The name of the database to connect to.
+- `MONGODB_USER`: Username for accessing the MongoDB database.
+- `MONGODB_PASSWORD`: Password for the database user.
+- `MONGODB_URL`: MongoDB connection URL (excluding database name).
+- `MONGODB_DB`: The name of the database to connect to.
 
 ### Email (SMTP) Configuration
 
 Used for sending emails (e.g., for notifications or password resets).
 
-- SMTP_HOST: Hostname of the SMTP server.
-- SMTP_PORT: Port number for the SMTP server (e.g., 587 for TLS).
-- SMTP_USER: Username for the SMTP server.
-- SMTP_PASSWORD: Password for the SMTP user.
-- SMTP_FROM: The email address used as the sender.
+- `SMTP_HOST`: Hostname of the SMTP server.
+- `SMTP_PORT`: Port number for the SMTP server (e.g., 587 for TLS).
+- `SMTP_USER`: Username for the SMTP server.
+- `SMTP_PASSWORD`: Password for the SMTP user.
+- `SMTP_FROM`: The email address used as the sender.
 
 ### Application Settings
 
-- APP_DOMAIN: The domain where the application is hosted (e.g., https://yourapp.com).
-- JWT_SECRET: Secret key for signing and verifying JSON Web Tokens (JWT).
+- `APP_DOMAIN`: The domain where the application is hosted (e.g., https://yourapp.com).
+- `JWT_SECRET`: Secret key for signing and verifying JSON Web Tokens (JWT).
 
 ### Cloudinary Configuration
 
 If Cloudinary is enabled for media storage, provide the following:
 
-- CLOUD_NAME: Your Cloudinary cloud name.
-- API_KEY: Cloudinary API key.
-- API_SECRET: Cloudinary API secret.
-- ENABLE_CLOUDINARY: Set to true to enable Cloudinary integration.
+- `CLOUD_NAME`: Your Cloudinary cloud name.
+- `API_KEY`: Cloudinary API key.
+- `API_SECRET`: Cloudinary API secret.
+- `ENABLE_CLOUDINARY`: Set to true to enable Cloudinary integration.
 
 ## Technologies Used
 
